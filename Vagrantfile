@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     web.vm.provision "shell", inline: <<-SHELL
       apt-get update
       apt-get install -y unzip git
-      apt-get install -y nginx php5-fpm php5 php5-cli php5-curl php5-mysql php5-gd php5-mongo php5-mcrypt
+      apt-get install -y nginx php5-fpm php5 php5-cli php5-curl php5-mysql php5-gd php5-mongo php5-redis php5-mcrypt
       cd /usr/share/nginx/
       rm -Rf *.zip phpMyAdmin* phpmyadmin
       wget --progress=dot:giga https://files.phpmyadmin.net/phpMyAdmin/4.6.5.2/phpMyAdmin-4.6.5.2-all-languages.zip -O phpMyAdmin-4.6.5.2-all-languages.zip
@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     web.vm.provision "shell", inline: <<-SHELL
       apt-get update
       apt-get install -y unzip git
-      apt-get install -y apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-mysql php5-gd php5-mongo php5-mcrypt
+      apt-get install -y apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-mysql php5-gd php5-mongo php5-redis php5-mcrypt
       service apache2 stop
       a2enmod rewrite
       cd /usr/share/
